@@ -1,0 +1,101 @@
+{% extends 'core/base.html' %} 
+{% load static %} 
+{% block title %} welcome {% endblock %}
+{% block content %} 
+            <!-- banner Start -->
+            <section class="home" id="home">
+
+              <div class="content">
+                  <h3>fresh coffee in the morning</h3>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat labore, sint cupiditate distinctio tempora reiciendis.</p>
+                  <a href="#" class="btn">get yours now</a>
+              </div>
+
+          </section>
+    <!-- about section starts  -->
+    <section class="about" id="about">
+
+      <h1 class="heading"> <span>about</span> us </h1>
+  
+      <div class="row">
+  
+          <div class="image mr-4">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26134.509838476657!2d9.477037699999999!3d35.03638955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12fec340b61767fd%3A0xcc600169ded4578c!2sSidi%20Bouzid!5e0!3m2!1sen!2stn!4v1661185785255!5m2!1sen!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+  
+          <div class="content ml-0	">
+              <h3>what makes our coffee special?</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus qui ea ullam, enim tempora ipsum fuga alias quae ratione a officiis id temporibus autem? Quod nemo facilis cupiditate. Ex, vel?</p>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit amet enim quod veritatis, nihil voluptas culpa! Neque consectetur obcaecati sapiente?</p>
+              <p> Phone number : <a href="tel:+21623362232">23362232</a></p>
+              <p> Email : <a href="mailto:test@gamil.com">test@gamil.com</a> </p>
+          </div>
+  
+      </div>
+  
+  </section>
+     <!-- Books -->
+     <section class="products" id="products">
+
+      <h1 class="heading"> our <span>Books</span> </h1>
+      
+      <div class="box-container">
+        {% for book in books %}
+          <div class="box">
+  
+              <div class="image object-center">
+                  <center><img class="object-center" src="{{book.img.url}}" alt=""></center>
+              </div>
+              <div class="content">
+                  <h3>{{book.title}}</h3>
+                  <a class="btn btn-primary" href="{% url 'book_detail' book.slug %}" >Read More</a>
+              </div>
+          </div>
+          {% endfor%}
+      </div>
+      
+  </section>
+  <!-- menu -->
+  <section class="menu" id="menu">
+
+    <h1 class="heading"> our <span>menu</span> </h1>
+    
+    <div class="box-container">
+        {% for list in list %}
+        <div class="box">
+            <img src="{{list.img.url}}" alt="">
+            <h3>{{list.categories}}</h3>
+            <div class="price">{{list.prix}}<span> DT</span></div>
+            <a class="btn btn-primary" href="menu/" >See More</a>
+        </div>
+
+        {% endfor%}
+
+    </div>
+
+  </section>
+
+<!-- gallery -->
+
+<section class="gallery1 mb-96">
+    <h1 class="text1 mr-4 ">Beethoven<br>Gallery</h1>
+    <div class = "gallery mb-96">
+        {% for gimg in gimgs %}
+        <div class="clipped-border">
+          <img class="im" src="{{ gimg.img.url }}" id="clipped">
+        </div>
+        {% endfor %}
+        <button onclick="location.href='{% url 'eventsimage' %}'" class="glow-on-hover" type="button" >TO SEE MORE, CLICK ME!</button>
+    </div>
+</section>
+
+
+
+
+    <!-- End -->
+
+
+
+{% endblock %}
+    
+    

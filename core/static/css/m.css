@@ -1,0 +1,83 @@
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: .8rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: #13131a;
+    border-radius: 5rem;
+}
+
+main{
+    background: #020202;
+    min-height:100vh;
+	display:flex;
+	flex-direction:column;
+	justify-content:space-between;
+}
+
+.btn-1{
+    position: relative;
+    border: none;
+    transition: 4s ease-in;
+    z-index: 1;
+}
+.btn-1::before,
+.btn-1::after{
+    position: absolute;
+    content:"" ;
+    z-index: -1;
+}
+.bn6 {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background-color: #232423;
+    padding: 0.3em 1.2em;
+    margin-left: 70%;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    font-weight: 550;
+    color: #ffffff;
+    background-size: 100% 100%;
+    box-shadow: 0 0 0 4px #232423 inset;
+  }
+  
+  .bn6:hover {
+    background-image: linear-gradient(
+      55deg,
+      transparent 10%,
+      #161616 10% 20%,
+      transparent 20% 30%,
+      #161616 30% 40%,
+      transparent 40% 50%,
+      #161616 50% 60%,
+      transparent 60% 70%,
+      #161616 70% 80%,
+      transparent 80% 90%,
+      #161616 90% 100%
+    );
+    animation: background 3s linear infinite;
+  }
+
+.cmt{
+    width: 50%;
+}
+.section1{
+    margin-left: 30%;
+
+}
+
+.pp{
+    margin-left: 2%;
+}

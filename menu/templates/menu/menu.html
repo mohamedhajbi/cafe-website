@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %} 
+{% block title %} menu {% endblock %}
+{% block content %} 
+<section class="blogs" id="blogs">
+
+    <h1 class="heading mt-32"> our <span>Menu </span>categories</h1>
+    
+    <div class="box-container">
+        {% for categories in categories %}
+        <div class="box">
+            <div class="image">
+                <img src="{{categories.img.url}}" alt="">
+            </div>
+            <div class="content">
+                <center><a  class="title">{{ categories.name }}</a></center>
+                <br>
+                <center> <a href="{% url 'list' categories.id %}" class="btn ">See more</a>
+            </div>
+        </div>
+
+    {% endfor %}
+    </div>
+
+{% endblock %}
+    
+    

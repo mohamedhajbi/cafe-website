@@ -1,0 +1,26 @@
+{% extends 'core/base.html' %} 
+{% block title %} menu {% endblock %}
+{% block content %} 
+
+
+<section class="menu" id="menu">
+
+    <h1 class="heading mt-32"> our <span>menu</span> </h1>
+    
+    <div class="box-container">
+        {% for list in list %}
+        <div class="box">
+            <img src="{{list.img.url}}" alt="">
+            <h3>{{list.categories}}</h3>
+            <div class="price">{{list.prix}}<span> DT</span></div>
+            
+        </div>
+
+        {% endfor%}
+
+    </div>
+
+</section>
+
+ 
+{% endblock %}
